@@ -22,6 +22,7 @@ npm install --save klox-components
 
 ## Publish
   
+If you are not logged in npm, run ```npm login``` and log in with the klox-team credentials.
 In order to publish an updated version of <strong>klox-components</strong> package, run ```npm run build```.  
 After the build is complete, add a new <em>version</em> number in <em>package.json</em> then run ```npm publish```.  
 
