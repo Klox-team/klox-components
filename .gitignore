@@ -72,7 +72,7 @@ typings/
 .env
 .env.test
 
-# parcel-bundler cache (https://parceljs.org/)
+# parcel-bundler cache (https://parceljs.org/)storybook-static/
 .cache
 
 # Next.js build output
@@ -102,3 +102,5 @@ dist
 
 # TernJS port file
 .tern-port
+
+storybook-static
