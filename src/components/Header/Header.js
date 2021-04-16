@@ -7,10 +7,9 @@ import { Button } from '../Button/Button'
 const HeaderAppBar = styled(AppBar)(props => {
     return {
         flexDirection: 'row',
-        justifyContent: 'space-evenly',
         minHeight: '64px',
         justifyContent: 'space-between',
-        ...props.cssProps
+        ...props.style
     }
 });
 
@@ -49,7 +48,7 @@ export class Header extends Component {
         const { loggedIn, logo, subTitle, clickConnect, ...cssProps } = this.props;
 
         return (
-            <HeaderAppBar position="absolute" cssProps={cssProps}>
+            <HeaderAppBar position="absolute" style={cssProps}>
                 <LeftContainer>
                     <img
                         style={{ marginTop: '8px', }}
