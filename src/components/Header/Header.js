@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import { styled } from '@material-ui/core/styles';
 import { AppBar, Box, Hidden, Typography } from '@material-ui/core';
-import { Button } from '../Button/Button'
+// import { Button } from '../Button/Button'
 
 const HeaderAppBar = styled(AppBar)(props => {
     return {
@@ -33,8 +33,6 @@ const RightContainer = styled(Box)({
     marginRight: '16px'
 })
 
-
-
 export class Header extends Component {
     constructor(props) {
         super(props);
@@ -60,9 +58,9 @@ export class Header extends Component {
                     <SubTitle>{subTitle}</SubTitle>
                 </LeftContainer>
                 <RightContainer>
-                    {!loggedIn &&
+                    {/* {!loggedIn &&
                         <Button color='default' onClick={clickConnect} label="Connexion" />
-                    }
+                    } */}
                     {loggedIn &&
                         <div>Logged in</div>
                     }

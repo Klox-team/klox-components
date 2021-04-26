@@ -1,5 +1,4 @@
-import { Button } from "./components/Button/Button";
 import { Header } from "./components/Header/Header";
-import { ButtonTypescript } from "./components/ButtonTypescript/ButtonTypescript";
+import { KloxButton } from "./components/KloxButton/KloxButton";
 
-export { Button, Header, ButtonTypescript };
+export { Header, KloxButton };

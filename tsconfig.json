@@ -6,7 +6,13 @@
     "module": "ESNext",
     "target": "ESNext",
     "jsx": "react",
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "lib": ["es6", "dom"],
+    // "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "moduleResolution": "node"
   },
   "include": ["./src/**/*"],
   "exclude": ["node_modules"]
