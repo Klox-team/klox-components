@@ -17,6 +17,15 @@
     "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook"
   },
+  "dependencies": {
+    "@material-ui/core": "^4.11.4",
+    "@material-ui/icons": "^4.11.2",
+    "@storybook/preset-create-react-app": "^3.1.7",
+    "@stripe/react-stripe-js": "^1.4.0",
+    "@stripe/stripe-js": "^1.14.0",
+    "storybook-addon-material-ui": "^0.9.0-alpha.24",
+    "typescript": "^4.2.4"
+  },
   "peerDependencies": {
     "react": "^16.14.0"
   },
@@ -50,12 +59,5 @@
   },
   "files": [
     "dist"
-  ],
-  "dependencies": {
-    "@material-ui/core": "^4.11.3",
-    "@material-ui/icons": "^4.11.2",
-    "@storybook/preset-create-react-app": "^3.1.7",
-    "storybook-addon-material-ui": "^0.9.0-alpha.24",
-    "typescript": "^4.2.4"
-  }
+  ]
 }
