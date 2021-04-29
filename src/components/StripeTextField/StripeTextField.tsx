@@ -11,6 +11,8 @@ import {
 import React from "react";
 import { StripeInput } from "./StripeInput";
 
+// Inspiration from https://codesandbox.io/s/stripe-0xez4
+
 type StripeElement =
   | typeof AuBankAccountElement
   | typeof CardCvcElement

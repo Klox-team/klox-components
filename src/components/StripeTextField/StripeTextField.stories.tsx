@@ -1,13 +1,17 @@
 import React from "react";
 
-import { StripeTextField, StripeTextFieldProps } from "./StripeTextField";
-import { Elements, CardElement, IbanElement } from "@stripe/react-stripe-js";
+import { StripeTextField } from "./StripeTextField";
+import {
+  Elements,
+  CardNumberElement,
+  CardExpiryElement,
+  CardCvcElement,
+  IbanElement,
+} from "@stripe/react-stripe-js";
 
 import { loadStripe } from "@stripe/stripe-js";
 
 const stripePromise = loadStripe("pk_test_6pRNASCoBOKtIshFeQd4XMUh");
-
-type StripeElement = typeof CardElement | typeof IbanElement;
 
 export default {
   title: "Components/StripeTextField",
@@ -15,26 +19,38 @@ export default {
   argTypes: {},
 };
 
-const Template = (args: StripeTextFieldProps<StripeElement>) => {
-  return (
-    <Elements stripe={stripePromise}>
-      <StripeTextField {...args} />
-    </Elements>
-  );
-};
+export const Card = () => (
+  <Elements stripe={stripePromise}>
+    <StripeTextField
+      stripeElement={CardNumberElement}
+      inputProps={{
+        options: {
+          showIcon: true,
+        },
+      }}
+      label="Numero de votre carte bancaire"
+    />
+    <StripeTextField
+      stripeElement={CardExpiryElement}
+      label="Date d'expiration de votre carte bancaire"
+    />
+    <StripeTextField
+      stripeElement={CardCvcElement}
+      label="Code secret de votre carte bancaire"
+    />
+  </Elements>
+);
 
-export const Card = Template.bind({});
-Card.args = {
-  stripeElement: CardElement,
-  inputProps: {
-    options: {
-      showIcon: true,
-    },
-  },
-  label: "Numero de votre carte bancaire",
-};
-
-export const Iban = Template.bind({});
-Iban.args = {
-  stripeElement: IbanElement,
-};
+export const Iban = () => (
+  <Elements stripe={stripePromise}>
+    <StripeTextField
+      stripeElement={IbanElement}
+      inputProps={{
+        options: {
+          supportedCountries: ["SEPA"],
+        },
+      }}
+      label="Numero de Iban"
+    />
+  </Elements>
+);
