@@ -1,10 +1,8 @@
 import React from "react";
 
-import { Card, Checkbox, Icon } from "@material-ui/core";
+import { Card } from "@material-ui/core";
 
 import { style } from "./KloxCard.style";
-import { KloxIcon } from "../KloxIcon/KloxIcon";
-import { KloxCheckBox } from "../KloxCheckBox/KloxCheckBox";
 
 export interface KloxCardProps {
   /**
