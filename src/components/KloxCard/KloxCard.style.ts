@@ -1,55 +1,37 @@
 import { makeStyles } from "@material-ui/core/styles";
 import { KloxCardProps } from "./KloxCard";
+import { globalClasses } from "../../classes/globalClasses";
+
+const cardStyles = {
+  selected: {
+    ...globalClasses.circularBorderGradient,
+  },
+  default: {},
+};
 
 export const style = makeStyles(() => {
   return {
-    card: {
-      width: "194px",
-      height: "152px",
-      display: "flex",
-      flexDirection: "column",
-      borderRadius: "8px",
-      margin: "0.5rem",
-    },
-    checkBoxContainer: (props: KloxCardProps) => {
+    card: (props: KloxCardProps) => {
+      const selected = props.selected ? "selected" : "default";
       return {
-        width: "100%",
-        height: "30%",
-        display: "flex",
-        justifyContent: "flex-end",
-        background: props.topColor,
-      };
-    },
-    checkBox: {
-      marginRight: "8px",
-      marginTop: "8px",
-    },
-    iconContainer: (props: KloxCardProps) => {
-      return {
-        width: "100%",
-        height: "20%",
-        display: "flex",
-        justifyContent: "flex-start",
-        background: props.topColor,
-        position: "relative",
-      };
-    },
-    label: (props: KloxCardProps) => {
-      return {
-        width: "100%",
-        height: "50%",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         textAlign: "center",
-        background: props.botColor,
-        fontFamily: "Poppins",
-        fontWeight: 700,
-        fontStyle: "normal",
-        fontSize: "13px",
-        lineHeight: "19px",
-        color: props.color,
+        height: "155px",
+        width: "174px",
+        margin: "1rem",
+        padding: "0.3rem",
+        ...cardStyles[selected],
       };
+    },
+    label: {
+      color: "#07003B",
+      fontFamily: "Poppins",
+      fontSize: "16px",
+      fontWeight: 600,
+      fontStyle: "normal",
+      lineHeight: "24px",
     },
   };
 });

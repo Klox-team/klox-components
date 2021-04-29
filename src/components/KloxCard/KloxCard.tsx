@@ -8,37 +8,17 @@ import { KloxCheckBox } from "../KloxCheckBox/KloxCheckBox";
 
 export interface KloxCardProps {
   /**
-   * Is check box checked ?
+   * Is this card selected ?
    */
-  checked: boolean;
-  /**
-   * Card icon
-   */
-  icon: React.Component;
-  /**
-   * Card icon color
-   */
-  iconColor: string;
+  selected: boolean;
   /**
    * Card label
    */
   label: string;
   /**
-   *  Color applied to background of top side element
-   */
-  topColor: string;
-  /**
-   *  Color applied to background of bot side element
-   */
-  botColor: string;
-  /**
-   * Color applied to label text
-   */
-  color: string;
-  /**
    * Optional click handler
    */
-  onChange?: () => void;
+  onClick?: () => void;
 }
 
 /**
@@ -46,31 +26,18 @@ export interface KloxCardProps {
  */
 
 export const KloxCard = (props: KloxCardProps) => {
-  const { label, checked, icon, iconColor, onChange } = props;
+  const { label, onClick } = props;
 
   const classes = style(props);
 
   return (
-    <Card className={classes.card} raised>
-      <div className={classes.checkBoxContainer}>
-        <KloxCheckBox checked={checked} onChange={onChange} />
-      </div>
-      <div className={classes.iconContainer}>
-        <KloxIcon
-          icon={icon}
-          color={iconColor}
-          style={{ position: "absolute", bottom: "-60%", marginLeft: "16px" }}
-        />
-      </div>
-      <div className={classes.label}>{label}</div>
+    <Card raised onClick={onClick} className={classes.card}>
+      <p className={classes.label}>{label}</p>
     </Card>
   );
 };
 
 KloxCard.defaultProps = {
   label: "Default",
-  checked: false,
-  topColor: "#27D6BC1A",
-  botColor: "#FFFF",
-  color: "#07003B",
+  selected: false,
 };
