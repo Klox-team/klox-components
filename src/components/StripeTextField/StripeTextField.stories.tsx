@@ -1,29 +1,13 @@
 import React from "react";
 
 import { StripeTextField, StripeTextFieldProps } from "./StripeTextField";
-import {
-  Elements,
-  AuBankAccountElement,
-  CardCvcElement,
-  CardExpiryElement,
-  CardNumberElement,
-  FpxBankElement,
-  IbanElement,
-  IdealBankElement,
-} from "@stripe/react-stripe-js";
+import { Elements, CardElement, IbanElement } from "@stripe/react-stripe-js";
 
 import { loadStripe } from "@stripe/stripe-js";
 
 const stripePromise = loadStripe("pk_test_6pRNASCoBOKtIshFeQd4XMUh");
 
-type StripeElement =
-  | typeof AuBankAccountElement
-  | typeof CardCvcElement
-  | typeof CardExpiryElement
-  | typeof CardNumberElement
-  | typeof FpxBankElement
-  | typeof IbanElement
-  | typeof IdealBankElement;
+type StripeElement = typeof CardElement | typeof IbanElement;
 
 export default {
   title: "Components/StripeTextField",
@@ -41,10 +25,16 @@ const Template = (args: StripeTextFieldProps<StripeElement>) => {
 
 export const Card = Template.bind({});
 Card.args = {
-  stripeElement: { CardNumberElement },
+  stripeElement: CardElement,
+  inputProps: {
+    options: {
+      showIcon: true,
+    },
+  },
+  label: "Numero de votre carte bancaire",
 };
 
 export const Iban = Template.bind({});
 Iban.args = {
-  stripeElement: { IbanElement },
+  stripeElement: IbanElement,
 };
