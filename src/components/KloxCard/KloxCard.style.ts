@@ -4,7 +4,7 @@ import { globalClasses } from "../../classes/globalClasses";
 
 const cardStyles = {
   selected: {
-    ...globalClasses.circularBorderGradient,
+    ...globalClasses.circularBorderGradient(),
   },
   default: {},
 };
