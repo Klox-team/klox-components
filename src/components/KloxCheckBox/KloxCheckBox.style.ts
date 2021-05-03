@@ -9,6 +9,7 @@ const checkBoxStyles = {
     height: "18px",
     background: commonLinearGradient,
     color: "white",
+    border: "2px solid #FFFF",
   },
   default: {
     width: "12px",

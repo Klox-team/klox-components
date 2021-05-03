@@ -2,12 +2,15 @@ const commonLinearGradient = `linear-gradient(90deg, #27D6BD 0%, #35C7C5 26.56%,
 const circularBorderLinearGradient = `linear-gradient(white, white), ${commonLinearGradient}`;
 
 export const globalClasses = {
-  circularBorderGradient: {
-    border: "4px solid transparent",
-    backgroundImage: circularBorderLinearGradient,
-    "-moz-border-image": "-moz-linear-gradient",
-    "-webkit-border-image": "-webkit-linear-gradient",
-    backgroundOrigin: "border-box",
-    backgroundClip: "padding-box, border-box",
+  circularBorderGradient: (borderSize) => {
+    const border = borderSize ? borderSize : "4px";
+    return {
+      border: `${border} solid transparent`,
+      backgroundImage: circularBorderLinearGradient,
+      "-moz-border-image": "-moz-linear-gradient",
+      "-webkit-border-image": "-webkit-linear-gradient",
+      backgroundOrigin: "border-box",
+      backgroundClip: "padding-box, border-box",
+    };
   },
 };

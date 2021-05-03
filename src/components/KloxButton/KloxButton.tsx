@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button } from "@material-ui/core";
+import { Button, Typography } from "@material-ui/core";
 
 import { style } from "./KloxButton.style";
 
@@ -37,7 +37,7 @@ export const KloxButton = (props: KloxButtonProps) => {
 
   return (
     <Button onClick={onClick} disabled={disabled} className={classes.container}>
-      <p className={classes.buttonLabel}>{label}</p>
+      <Typography className={classes.buttonLabel}>{label}</Typography>
     </Button>
   );
 };
