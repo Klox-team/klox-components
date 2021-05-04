@@ -5,9 +5,9 @@ import { style } from "./ButtonPanelSelection.style";
 
 export interface ButtonPanelSelectionProps {
   /**
-   * Panel title
+   * Panel label
    */
-  title: string;
+  label?: string;
   /**
    * Panel selection
    */
@@ -19,7 +19,7 @@ export interface ButtonPanelSelectionProps {
   /**
    * Optionnal onClick handler
    */
-  onClick: (e: React.MouseEvent) => void;
+  onClick: (option: string) => void;
 }
 
 /**
@@ -29,17 +29,17 @@ export interface ButtonPanelSelectionProps {
 export const ButtonPanelSelection = (props: ButtonPanelSelectionProps) => {
   const classes = style(props);
 
-  const { title, selected, selection, onClick } = props;
+  const { label, selected, selection, onClick } = props;
 
   return (
     <div className={classes.panelContainer}>
-      <div className={classes.panelTitle}>{title}</div>
+      {label && <div className={classes.panelTitle}>{label}</div>}
       <div className={classes.selectionContainer}>
         {selection.map((option, index) => {
           return (
             <div
               key={option + index}
-              onClick={onClick}
+              onClick={() => onClick(option)}
               className={
                 selected.find((s) => s === option)
                   ? classes.selected
@@ -56,9 +56,12 @@ export const ButtonPanelSelection = (props: ButtonPanelSelectionProps) => {
 };
 
 ButtonPanelSelection.defaultProps = {
-  title: "Default",
-  selection: ["Default", "Default 1", "Default 2"],
-  selected: ["Default 2"],
+  selection: [
+    "Default Component",
+    "Default Component 1",
+    "Default Component 2",
+  ],
+  selected: ["Default Component 2"],
   onClick: (e) => {
     console.log(e);
   },

@@ -25,10 +25,8 @@ export const KloxCheckBox = (props: KloxCheckBoxProps) => {
   const classes = style(props);
 
   return (
-    <IconButton>
-      <div onClick={onChange} className={classes.checkBox}>
-        {checked && <CheckIcon />}
-      </div>
+    <IconButton onClick={onChange}>
+      <div className={classes.checkBox}>{checked && <CheckIcon />}</div>
     </IconButton>
   );
 };

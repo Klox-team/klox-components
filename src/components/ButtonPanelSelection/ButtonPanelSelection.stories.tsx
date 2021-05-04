@@ -16,3 +16,10 @@ const Template = (args: ButtonPanelSelectionProps) => {
 };
 
 export const Default = Template.bind({});
+
+export const WithLabel = Template.bind({});
+WithLabel.args = {
+  label: "With label",
+  selection: ["With label selection", "With label 2 longer text button title"],
+  selected: ["With label 2 longer text button title"],
+};
