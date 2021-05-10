@@ -43,6 +43,11 @@ export const style = makeStyles(() => {
       margin: "0.5rem",
       textAlign: "center",
     },
+    iconContainer: {
+      display: "flex",
+      alignItems: "center",
+      paddingLeft: "6px",
+    },
     optionName: {
       fontFamily: "Poppins",
       fontWeight: 500,

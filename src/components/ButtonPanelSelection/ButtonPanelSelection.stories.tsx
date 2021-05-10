@@ -1,3 +1,5 @@
+import Twitter from "@material-ui/icons/Twitter";
+import Facebook from "@material-ui/icons/Facebook";
 import React from "react";
 
 import {
@@ -36,4 +38,12 @@ LongText.args = {
   label: "Long text",
   selection: ["THIS IS A LONG TEXT", "THIS IS AN EVEN LONGER LONG TEXT"],
   selected: ["THIS IS AN EVEN LONGER LONG TEXT"],
+};
+
+export const WithIcon = Template.bind({});
+WithIcon.args = {
+  label: "Long text",
+  selection: ["Facebook", "Twitter"],
+  selected: ["Twitter"],
+  icons: [<Facebook />, <Twitter />],
 };

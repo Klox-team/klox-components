@@ -1,5 +1,6 @@
 import { Typography } from "@material-ui/core";
 import React from "react";
+import { JsxElement } from "typescript";
 
 import { style } from "./ButtonPanelSelection.style";
 
@@ -17,6 +18,10 @@ export interface ButtonPanelSelectionProps {
    */
   selected: Array<string>;
   /**
+   * Optionnal array of icons related to panel options
+   */
+  icons: Array<React.Component>;
+  /**
    * Optionnal onClick handler
    */
   onClick: (option: string) => void;
@@ -29,13 +34,14 @@ export interface ButtonPanelSelectionProps {
 export const ButtonPanelSelection = (props: ButtonPanelSelectionProps) => {
   const classes = style(props);
 
-  const { label, selected, selection, onClick } = props;
+  const { label, selected, selection, icons, onClick } = props;
 
   return (
     <div className={classes.panelContainer}>
       {label && <div className={classes.panelTitle}>{label}</div>}
       <div className={classes.selectionContainer}>
         {selection.map((option, index) => {
+          const Icon = icons && icons[index] ? icons[index] : <></>;
           return (
             <div
               key={option + index}
@@ -46,6 +52,9 @@ export const ButtonPanelSelection = (props: ButtonPanelSelectionProps) => {
                   : classes.selection
               }
             >
+              <div className={classes.iconContainer}>
+                {icons && icons[index]}
+              </div>
               <p className={classes.optionName}>{option}</p>
             </div>
           );
