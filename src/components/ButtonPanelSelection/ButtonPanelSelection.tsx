@@ -52,9 +52,9 @@ export const ButtonPanelSelection = (props: ButtonPanelSelectionProps) => {
                   : classes.selection
               }
             >
-              <div className={classes.iconContainer}>
-                {icons && icons[index]}
-              </div>
+              {icons && icons[index] && (
+                <div className={classes.iconContainer}>{icons[index]}</div>
+              )}
               <p className={classes.optionName}>{option}</p>
             </div>
           );
