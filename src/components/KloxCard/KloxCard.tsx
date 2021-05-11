@@ -17,6 +17,10 @@ export interface KloxCardProps {
    * Optional click handler
    */
   onClick?: () => void;
+  /**
+   * Optional childrens
+   */
+  children?: React.ReactNode;
 }
 
 /**
@@ -24,18 +28,18 @@ export interface KloxCardProps {
  */
 
 export const KloxCard = (props: KloxCardProps) => {
-  const { label, onClick } = props;
+  const { label, onClick, children } = props;
 
   const classes = style(props);
 
   return (
     <Card raised onClick={onClick} className={classes.card}>
-      <p className={classes.label}>{label}</p>
+      {label && <p className={classes.label}>{label}</p>}
+      {children}
     </Card>
   );
 };
 
 KloxCard.defaultProps = {
-  label: "Default",
   selected: false,
 };
