@@ -37,6 +37,8 @@ export const style = makeStyles(() => {
     container: (props: {
       disabled: "disabled" | "false";
       filled: "filled" | "false";
+      width: string;
+      height: string;
     }) => {
       return {
         borderRadius: "8px",
@@ -54,11 +56,15 @@ export const style = makeStyles(() => {
         // End of trick
         ...stylesContainer[props.filled],
         ...stylesContainer[props.disabled],
+        width: props.width,
+        height: props.height,
       };
     },
     buttonLabel: (props: {
       disabled: "disabled" | "false";
       filled: "filled" | "false";
+      width: string;
+      height: string;
     }) => {
       return {
         fontFamily: "Poppins",

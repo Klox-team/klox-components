@@ -17,8 +17,10 @@ export const iconStyle = makeStyles(() => {
     iconButton: (props: KloxIconProps) => {
       const rounded = props.rounded ? "true" : "false";
       return {
-        width: "41px",
-        height: "41px",
+        minWidth: "41px",
+        maxWidth: "41px",
+        minHeight: "41px",
+        maxHeight: "41px",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",

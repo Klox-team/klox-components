@@ -40,3 +40,11 @@ WithChildren.args = {
     </div>
   ),
 };
+
+export const CustomWidthHeight = Template.bind({});
+CustomWidthHeight.args = {
+  width: "250px",
+  height: "200px",
+  label: "With custom width/height",
+  selected: true,
+};

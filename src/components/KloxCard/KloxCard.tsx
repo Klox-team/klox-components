@@ -14,6 +14,14 @@ export interface KloxCardProps {
    */
   label: string;
   /**
+   * Optional width css property value in px
+   */
+  width?: string;
+  /**
+   * Optional height css property value in px
+   */
+  height?: string;
+  /**
    * Optional click handler
    */
   onClick?: () => void;

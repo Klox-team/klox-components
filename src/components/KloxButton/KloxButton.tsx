@@ -14,6 +14,14 @@ export interface KloxButtonProps {
    */
   disabled: boolean;
   /**
+   * Optional width css property value in px
+   */
+  width?: string;
+  /**
+   * Optional height css property value in px
+   */
+  height?: string;
+  /**
    * Button content
    */
   label: string;
@@ -33,6 +41,8 @@ export const KloxButton = (props: KloxButtonProps) => {
   const classes = style({
     disabled: props.disabled ? "disabled" : "false",
     filled: props.filled && !props.disabled ? "filled" : "false",
+    width: props.width ? props.width : "92px",
+    height: props.height ? props.height : "42px",
   });
 
   return (

@@ -32,3 +32,25 @@ Disabled.args = {
   label: "Disabled",
   disabled: true,
 };
+
+export const WithWidth = Template.bind({});
+WithWidth.args = {
+  filled: false,
+  label: "Custom width",
+  width: "200px",
+};
+
+export const WithHeight = Template.bind({});
+WithHeight.args = {
+  filled: false,
+  label: "Custom height",
+  height: "100px",
+};
+
+export const CustomWitdthHeight = Template.bind({});
+CustomWitdthHeight.args = {
+  filled: false,
+  label: "Custom width/height",
+  width: "200px",
+  height: "60px",
+};

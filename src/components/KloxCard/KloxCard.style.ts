@@ -13,13 +13,15 @@ export const style = makeStyles(() => {
   return {
     card: (props: KloxCardProps) => {
       const selected = props.selected ? "selected" : "default";
+      const height = props.height ? props.height : "155px";
+      const width = props.width ? props.width : "174px";
       return {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         textAlign: "center",
-        height: "155px",
-        width: "174px",
+        height,
+        width,
         margin: "1rem",
         padding: "0.3rem",
         ...cardStyles[selected],
