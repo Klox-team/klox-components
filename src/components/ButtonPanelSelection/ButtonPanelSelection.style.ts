@@ -30,7 +30,8 @@ export const style = makeStyles(() => {
       borderRadius: "8px",
       margin: "0.5rem",
       textAlign: "center",
-      ...globalClasses.circularBorderGradient("2px"),
+      ...globalClasses.circularBorderGradient("1px"),
+      cursor: 'pointer'
     },
     selection: {
       display: "flex",
@@ -42,6 +43,7 @@ export const style = makeStyles(() => {
       boxShadow: "0px 4px 4px 0px #00000040",
       margin: "0.5rem",
       textAlign: "center",
+      cursor: 'pointer'
     },
     iconContainer: {
       display: "flex",

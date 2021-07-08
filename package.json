@@ -1,6 +1,6 @@
 {
   "name": "@klox/klox-components",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "This is an internal library of react component.",
   "author": "Klox-team",
   "license": "MIT",

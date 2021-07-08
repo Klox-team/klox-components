@@ -47,7 +47,7 @@ export const style = makeStyles(() => {
         filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
         background: "#ffff",
         // Trick for border with rounded linear gradient, disable background property if set
-        border: "2px solid transparent",
+        border: "1px solid transparent",
         backgroundImage: circularBorderLinearGradient,
         "-moz-border-image": "-moz-linear-gradient",
         "-webkit-border-image": "-webkit-linear-gradient",

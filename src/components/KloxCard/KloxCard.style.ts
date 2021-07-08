@@ -24,6 +24,7 @@ export const style = makeStyles(() => {
         width,
         margin: "1rem",
         padding: "0.3rem",
+        cursor: "pointer",
         ...cardStyles[selected],
       };
     },
